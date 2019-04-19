@@ -40,7 +40,6 @@ imageEffects.forEach((imageEffect) => {
 
 
 const pElements = document.querySelectorAll('p');
-console.log(pElements);
 
 pElements.forEach((pElement) => {
   pElement.addEventListener('wheel', function(event){
@@ -65,7 +64,6 @@ pEls.forEach((pEl) => {
 });
 
 // ===== dblclick =====
-
 
 const rainbow = document.querySelector('h2'),
 colors = ['purple', 'yellow', 'orange', 'salmon', 'hotpink',  'white'];
