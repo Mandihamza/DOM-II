@@ -53,14 +53,13 @@ pElements.forEach((pElement) => {
 
 // ===== click & mouseleave =====
 
-const btns = document.querySelectorAll('p');
-console.log(btns);
+const pEls = document.querySelectorAll('p');
 
-pElements.forEach((btn) => {
-  btn.addEventListener('click', function(event){
+pEls.forEach((pEl) => {
+  pEl.addEventListener('click', function(event){
     event.target.classList.add('mouse-clicked');
   });
-  btn.addEventListener('mouseleave', function(event){
+  pEl.addEventListener('mouseleave', function(event){
     event.target.classList.remove('mouse-clicked');
   });
 });
@@ -68,7 +67,7 @@ pElements.forEach((btn) => {
 // ===== dblclick =====
 
 
-const rainbow = document.querySelector('html'),
+const rainbow = document.querySelector('h2'),
 colors = ['purple', 'yellow', 'orange', 'salmon', 'hotpink',  'white'];
 
 rainbow.ondblclick = function () {
@@ -87,7 +86,18 @@ addEventListener('keydown', e => {
   if (e.keyCode === 13)
   document.body.style.background = 'Purple';
 addEventListener('keyup', function(event) {
-  if (event.keyCode == 13)
+  if (e.keyCode === 13)
     document.body.style.background = 'White';
 });
-})
+});
+
+// ===== Event propigation =====
+
+const divs = document.querySelectorAll('body div');
+
+function logText(e) {
+  console.log(this.classList.value);
+  event.stopPropagation();
+}
+
+divs.forEach(div => div.addEventListener('click', logText));
