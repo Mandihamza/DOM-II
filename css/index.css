@@ -174,6 +174,9 @@ img {
     margin: 0 5%;
   }
 }
+:root {
+  --navColor: #F8CF2C;
+}
 .main-navigation {
   width: 100%;
   height: 90px;
@@ -212,8 +215,20 @@ img {
 }
 .main-navigation .nav-container .nav a {
   font-size: 1.6rem;
-  color: #212529;
+  background: linear-gradient(to bottom, var(--navColor) 0%, var(--navColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #000;
   text-decoration: none;
+  transition: background-size 0.3s;
+}
+.main-navigation .nav-container .nav a:hover {
+  background-size: 4px 50px;
+}
+.main-navigation .nav-container .nav .nav-active {
+  font-size: 1.8rem;
+  transition: font-size 0.5s ease;
 }
 .footer {
   width: 100%;
@@ -225,6 +240,23 @@ img {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.home .img-mousedown {
+  border: 2px solid hotpink;
+  opacity: 0.3;
+  transition: 0.5s ease;
+}
+.home .img-text {
+  text-align: center;
+  font-size: 1.6rem;
+  color: black;
+}
+.home .wheel-effects {
+  font-size: 2rem;
+  color: hotpink;
+}
+.home .mouse-clicked {
+  background: yellowgreen;
 }
 .home .intro {
   padding: 90px 0 10px;
